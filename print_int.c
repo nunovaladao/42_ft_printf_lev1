@@ -6,17 +6,19 @@
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:57:41 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/11 18:02:50 by nsoares-         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:22:53 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int print_int(int n)
-{
-    char *str;
-    int len;
+#include "ft_printf.h"
 
-    str = ft_itoa(n);
-    len = ft_putstr_fd(str);
-    free(str);
-    return (len);
+int	print_int(int n)
+{
+	char	*str;
+	int		len;
+
+	str = ft_itoa(n);
+	len = print_str(str);
+	free (str);
+	return (len);
 }

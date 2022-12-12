@@ -6,55 +6,55 @@
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 20:57:32 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/12 12:43:38 by nsoares-         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:28:24 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int tamanho_hex(unsigned int n)
+static int	tamanho_hex(unsigned long n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (n == 0)
-        return (1);
-    while (n > 0)
-    {
-        n = n / 16;
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i);
 }
 
-static char *hex_utoa(unsigned long int n, char *base)
+static char	*hex_utoa(unsigned long n, char *base)
 {
-    char *str;
-    int size;
+	char	*str;
+	int		size;
 
-    size = tamanho_hex(n);
-    str = malloc(sizeof(char) * (size + 1));
-    if (!str)
-        return (NULL);
-    str[size] = '\0';
-    while (size > 0)
-    {
-        str[size - 1] = base[n % 16];
-        n /= 16;
-        size--;
-    }
-    return (str);
+	size = tamanho_hex(n);
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	while (size > 0)
+	{
+		str[size - 1] = base[n % 16];
+		n /= 16;
+		size--;
+	}
+	return (str);
 }
 
-int print_hex(unsigned long int n, char *base)
+int	print_ptr(void *n, char *base)
 {
-    char *str;
-    int len;
-    int long nbr;
+	char			*str;
+	int				len;
+	unsigned long	nb;
 
-    nbr = ()
-    str = hex_utoa(n, base);
-    len = print_str(str);
-    free(str);
-    return (len);
+	nb = (unsigned long)n;
+	str = hex_utoa(nb, base);
+	len = print_str(str);
+	free (str);
+	return (len);
 }

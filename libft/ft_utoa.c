@@ -27,19 +27,19 @@ static int	tamanho(unsigned int n)
 
 char	*ft_utoa(unsigned int n)
 {
-    char *str;
-    int size;
+	char	*str;
+	int		size;
 
-    size = tamanho(n);
-    str = malloc(sizeof(char) * (size + 1));
-    if (!str)
-        return (NULL);
-    str[size] = '\0';
-    while (n != 0)
-    {
-        str[size -1] = n % 10 + 48;
-        n = n / 10;
-        size--;
-    }
-    return (str);
+	size = tamanho(n);
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	while (n != 0)
+	{
+		str[size -1] = n % 10 + 48;
+		n = n / 10;
+		size--;
+	}
+	return (str);
 }
