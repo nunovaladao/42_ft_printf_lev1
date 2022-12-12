@@ -1,60 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ptr.c                                        :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 20:57:32 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/12 12:43:38 by nsoares-         ###   ########.fr       */
+/*   Created: 2022/12/11 18:11:35 by nsoares-          #+#    #+#             */
+/*   Updated: 2022/12/11 20:42:09 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int tamanho_hex(unsigned int n)
+static int	tamanho(unsigned int n)
 {
-    int i;
+	int	l;
 
-    i = 0;
-    if (n == 0)
-        return (1);
-    while (n > 0)
-    {
-        n = n / 16;
-        i++;
-    }
-    return (i);
+	l = 0;
+	while (n != 0)
+	{
+		++l;
+		n = n / 10;
+	}
+	return (l);
 }
 
-static char *hex_utoa(unsigned long int n, char *base)
+char	*ft_utoa(unsigned int n)
 {
     char *str;
     int size;
 
-    size = tamanho_hex(n);
+    size = tamanho(n);
     str = malloc(sizeof(char) * (size + 1));
     if (!str)
         return (NULL);
     str[size] = '\0';
-    while (size > 0)
+    while (n != 0)
     {
-        str[size - 1] = base[n % 16];
-        n /= 16;
+        str[size -1] = n % 10 + 48;
+        n = n / 10;
         size--;
     }
     return (str);
-}
-
-int print_hex(unsigned long int n, char *base)
-{
-    char *str;
-    int len;
-    int long nbr;
-
-    nbr = ()
-    str = hex_utoa(n, base);
-    len = print_str(str);
-    free(str);
-    return (len);
 }
