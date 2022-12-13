@@ -6,7 +6,7 @@
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 20:57:32 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/12 18:28:24 by nsoares-         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:36:39 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	tamanho_hex(unsigned long n)
 
 	i = 0;
 	if (n == 0)
-		return (1);
+		return (print_char('0'));
 	while (n > 0)
 	{
 		n = n / 16;
@@ -53,8 +53,11 @@ int	print_ptr(void *n, char *base)
 	unsigned long	nb;
 
 	nb = (unsigned long)n;
+	if (nb == 0)
+		return (write(1, "(nil)", 5));
 	str = hex_utoa(nb, base);
+	write(1, "0x", 2);
 	len = print_str(str);
 	free (str);
-	return (len);
+	return (len + 2);
 }

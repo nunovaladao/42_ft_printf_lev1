@@ -6,7 +6,7 @@
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:35 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/11 20:42:09 by nsoares-         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:26:48 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	tamanho(unsigned int n)
 	l = 0;
 	while (n != 0)
 	{
-		++l;
 		n = n / 10;
+		l++;
 	}
 	return (l);
 }
@@ -37,7 +37,7 @@ char	*ft_utoa(unsigned int n)
 	str[size] = '\0';
 	while (n != 0)
 	{
-		str[size -1] = n % 10 + 48;
+		str[size -1] = (n % 10) + '0';
 		n = n / 10;
 		size--;
 	}
