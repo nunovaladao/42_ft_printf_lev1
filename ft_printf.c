@@ -6,7 +6,7 @@
 /*   By: nsoares- <nsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 10:57:56 by nsoares-          #+#    #+#             */
-/*   Updated: 2022/12/13 15:38:10 by nsoares-         ###   ########.fr       */
+/*   Updated: 2022/12/15 12:20:29 by nsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	ft_check_format(char format, va_list arg)
 	else if (format == 'u')
 		return (print_unsigned(va_arg(arg, unsigned int)));
 	else if (format == 'p')
-		return (print_ptr(va_arg(arg, void *), \
-		"0123456789abcdef"));
+		return (print_ptr(va_arg(arg, void *), "0123456789abcdef"));
 	else if (format == 'x' || format == 'X')
 	{
 		if (format == 'X')
@@ -63,14 +62,16 @@ int	ft_printf(const char *str, ...)
 	return (print_len);
 }
 
-/* int main()
+/*int main()
 {
 	ft_printf("****only_string****\n");	
-	ft_printf("printf");
+	ft_printf("printf\n\n");
 	
 	ft_printf("****char****\n");
-	char c = 'c';	
-	ft_printf("%c\n\n", c);
+	char c = 'c';
+	char h = 'h';
+	char r = 'r';
+	ft_printf("%c %c %c\n\n", c, h, r);
 	
 	ft_printf("****string****\n");
 	char *s = "nuno";	
@@ -86,7 +87,6 @@ int	ft_printf(const char *str, ...)
 	ft_printf("%u\n\n", u);
 
 	ft_printf("****address pointer****\n");
-	//int var = 10;
 	int *p;
 	p = 0; 	
 	ft_printf("%p\n\n", p);
@@ -97,4 +97,4 @@ int	ft_printf(const char *str, ...)
 	
 	ft_printf("value of a: %X [%x]\n",a,a);
 	ft_printf("value of b: %X [%x]\n\n",b,b);
-} */
+}*/

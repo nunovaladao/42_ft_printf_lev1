@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 			
 clean:
 	$(MAKE) clean -C ./libft 
-	$(RM) $(OBJS) libftprintf.a 
+	$(RM) $(OBJS)
 	
 fclean: clean
 		$(MAKE) fclean -C ./libft
