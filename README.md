@@ -1,5 +1,5 @@
 
-## FT_PRINTF ✏️
+# FT_PRINTF ✏️
 
 This project is about recoding the original **printf()**! 
 
