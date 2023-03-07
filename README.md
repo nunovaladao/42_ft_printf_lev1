@@ -4,7 +4,7 @@
 This project is about recoding the original **printf()**! 
 
   - This will be a **project** that will be added to the **library (libft)** and that may be useful in future projects.
-  - I also learned how to use a variable number of arguments.
+  - I learned how to use a variable number of arguments.
 
 #### We have to implement the following conversions: 
 
